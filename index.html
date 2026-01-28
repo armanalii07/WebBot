@@ -1,0 +1,2773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Madeena Masjid Dubauli - Center of Faith and Community</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        
+        :root {
+            --primary-color: #0d6e6e;
+            --primary-dark: #094a4a;
+            --primary-light: #4f9e9e;
+            --secondary-color: #f8f1e5;
+            --accent-color: #d4af37;
+            --accent-dark: #b38f2a;
+            --text-color: #333;
+            --light-text: #f5f5f5;
+            --shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            --glow: 0 0 15px rgba(212, 175, 55, 0.6);
+            --transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            --gradient-primary: linear-gradient(135deg, var(--primary-dark), var(--primary-color), var(--primary-light));
+            --gradient-accent: linear-gradient(135deg, var(--accent-dark), var(--accent-color));
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            color: var(--text-color);
+            background: linear-gradient(to bottom, #f9f9f9, #f0f0f0);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Amiri', serif;
+            font-weight: 700;
+            color: var(--primary-dark);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: var(--transition);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 28px;
+            background: var(--gradient-accent);
+            color: var(--text-color);
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+            z-index: -1;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            box-shadow: 0 10px 25px rgba(13, 110, 110, 0.4);
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 15px 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+        }
+
+        header.scrolled {
+            padding: 10px 0;
+            background: rgba(13, 110, 110, 0.98);
+            backdrop-filter: blur(10px);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo img {
+            height: 60px;
+            width: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 2px solid var(--accent-color);
+            box-shadow: var(--glow);
+            transition: var(--transition);
+        }
+
+        .logo:hover img {
+            transform: rotate(5deg);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.8);
+        }
+
+        .logo-text h1 {
+            font-size: 1.8rem;
+            margin-bottom: 5px;
+            color: white;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo-text p {
+            font-size: 0.9rem;
+            font-style: italic;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            font-weight: 500;
+            position: relative;
+            padding: 8px 0;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 3px;
+            background-color: var(--accent-color);
+            transition: var(--transition);
+            border-radius: 3px;
+        }
+
+        nav a:hover::after,
+        nav a.active::after {
+            width: 100%;
+            box-shadow: var(--glow);
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .mobile-menu-btn:hover {
+            transform: scale(1.1);
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('images/ai1.png') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: white;
+            padding-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at center, transparent 10%, rgba(0, 0, 0, 0.8) 100%);
+            opacity: 0.6;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.8rem;
+            margin-bottom: 20px;
+            color: white;
+            animation: slideUp 1s ease;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            animation: slideUp 1s ease 0.2s forwards;
+            opacity: 0;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            animation: slideUp 1s ease 0.4s forwards;
+            opacity: 0;
+        }
+
+        @keyframes slideUp {
+            from { 
+                transform: translateY(40px);
+                opacity: 0;
+            }
+            to { 
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Notice Section */
+        .notice-section {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #101e29, #f8f9fa);
+            position: relative;
+        }
+
+        .notice-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+
+        .notice-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: start;
+        }
+
+        .notice-content {
+            background: var(--secondary-color);
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            position: relative;
+            overflow: hidden;
+            transition: var(--transition);
+        }
+
+        .notice-content::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--gradient-accent);
+        }
+
+        .notice-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .notice-content h3 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            color: var(--primary-dark);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 15px;
+        }
+
+        .notice-content p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+
+        /* Image Slider Wrapper */
+        .notice-image {
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            height: 100%;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .notice-slider {
+            display: flex;
+            width: 100%; /* depends on no. of slides */
+            transition: transform 0.6s ease-in-out;
+        }
+
+        .notice-slider .slide {
+            min-width: 100%;
+            height: 100%;
+        }
+
+        .notice-slider img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* Dots navigation */
+        .notice-dots {
+            position: absolute;
+            bottom: 15px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 8px;
+        }
+
+        .notice-dots .dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .notice-dots .dot.active {
+            background: var(--accent-color);
+            box-shadow: 0 0 10px var(--accent-color);
+        }
+
+        /* Prayer Times Section */
+        .prayer-times-section {
+            padding: 100px 0;
+            background: var(--gradient-primary);
+            color:white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .prayer-times-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: pulse 15s infinite linear;
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 60px;
+            position: relative;
+        }
+
+        .section-title h2 {
+            font-size: 2.8rem;
+            display: inline-block;
+            position: relative;
+            padding-bottom: 15px;
+            color: white;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 4px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+            box-shadow: var(--glow);
+        }
+
+        .prayer-times-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin-top: 40px;
+        }
+
+        .prayer-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transform: translateY(20px);
+            opacity: 0;
+            animation: cardAppear 0.6s ease forwards;
+        }
+
+        @keyframes cardAppear {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .prayer-card:nth-child(1) { animation-delay: 0.1s; }
+        .prayer-card:nth-child(2) { animation-delay: 0.2s; }
+        .prayer-card:nth-child(3) { animation-delay: 0.3s; }
+        .prayer-card:nth-child(4) { animation-delay: 0.4s; }
+        .prayer-card:nth-child(5) { animation-delay: 0.5s; }
+        .prayer-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .prayer-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .prayer-card.active {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.05);
+            box-shadow: var(--glow);
+        }
+
+        .prayer-card.active .prayer-name,
+        .prayer-card.active .prayer-time {
+            color: white;
+        }
+
+        .prayer-name {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: var(--accent-color);
+        }
+
+        .prayer-time {
+            font-size: 2rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        .prayer-adhan {
+            font-size: 1rem;
+            margin-top: 5px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .hijri-date {
+            margin-top: 40px;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+        }
+
+        /* About Section */
+        .about-section {
+            padding: 100px 0;
+            background: linear-gradient(to bottom,#f8f9fa, #252424 );
+            position: relative;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .about-text {
+            animation: slideLeft 1s ease;
+        }
+
+        .about-image {
+            position: relative;
+            animation: slideRight 1s ease;
+        }
+
+        @keyframes slideLeft {
+            from { 
+                transform: translateX(-50px);
+                opacity: 0;
+            }
+            to { 
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideRight {
+            from { 
+                transform: translateX(50px);
+                opacity: 0;
+            }
+            to { 
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .about-image img {
+            width: 100%;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .about-image:hover img {
+            transform: scale(1.03);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .about-image::after {
+            content: '';
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 100%;
+            height: 100%;
+            border: 3px solid var(--accent-color);
+            border-radius: 15px;
+            z-index: -1;
+            transition: var(--transition);
+        }
+
+        .about-image:hover::after {
+            top: -10px;
+            right: -10px;
+        }
+
+        /* Image Slider Styles */
+        .image-slider {
+            width: 100%;
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            aspect-ratio: 1/1;
+        }
+
+        .slider-container {
+            display: flex;
+            transition: transform 0.5s ease;
+            height: 100%;
+        }
+
+        .slider-slide {
+            min-width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slider-slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .slider-nav {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            z-index: 10;
+        }
+
+        .slider-dot {
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .slider-dot.active {
+            background-color: var(--accent-color);
+            transform: scale(1.3);
+            box-shadow: var(--glow);
+        }
+
+        .slider-dot:hover {
+            background-color: var(--accent-color);
+            transform: scale(1.2);
+        }
+
+        /* Services Section */
+        .services-section {
+            padding: 100px 0;
+            background: var(--gradient-primary);
+            color: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+        }
+
+        .service-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 35px 30px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-accent);
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .service-icon {
+            font-size: 3.5rem;
+            color: var(--accent-color);
+            margin-bottom: 25px;
+            transition: var(--transition);
+        }
+
+        .service-card:hover .service-icon {
+            transform: scale(1.2) rotate(5deg);
+            color: white;
+        }
+
+        .service-card h3 {
+            margin-bottom: 20px;
+            color: white;
+            font-size: 1.6rem;
+        }
+
+        .service-card p {
+            color: rgba(255, 255, 255, 0.9);
+            line-height: 1.7;
+        }
+
+        /* Events Section */
+        .events-section {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #1d5359, #8d9093);
+        }
+
+        .events-timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 0;
+        }
+
+        .event-item {
+            position: relative;
+            width: 100%;
+            max-width: 595px;
+            margin: 0 auto 40px;
+            padding: 20px;
+            animation: fadeInUp 0.8s ease forwards;
+            opacity: 0;
+        }
+
+        .event-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .event-item img {
+            width: 100%;
+            max-width: 595px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .event-item:hover img {
+            transform: scale(1.02);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+        }
+
+        .event-content {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: var(--shadow);
+            position: relative;
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .event-content:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .event-date {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .event-content h3 {
+            margin-bottom: 15px;
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+        }
+
+        .event-content p {
+            line-height: 1.7;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                transform: translateY(40px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* Committee Section */
+        .committee-section {
+            padding: 100px 0;
+            background: var(--gradient-primary);
+            color: white;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .committee-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 35px;
+            margin-top: 50px;
+        }
+
+        .committee-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            transition: var(--transition);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            text-align: center;
+        }
+
+        .committee-card:hover {
+            transform: translateY(-10px) scale(1.03);
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        .member-image {
+            position: relative;
+            height: 250px;
+            overflow: hidden;
+        }
+
+        .member-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+
+        .committee-card:hover .member-image img {
+            transform: scale(1.1);
+        }
+
+        .social-links {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            opacity: 0;
+            transition: var(--transition);
+        }
+
+        .committee-card:hover .social-links {
+            opacity: 1;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            color: var(--primary-color);
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            color: white;
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .member-info {
+            padding: 25px 20px;
+        }
+
+        .member-info h3 {
+            margin-bottom: 10px;
+            color: white;
+            font-size: 1.4rem;
+        }
+
+        .position {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .tenure {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.95rem;
+            font-style: italic;
+            margin-bottom: 8px;
+        }
+
+        .contact {
+            color: rgba(255, 255, 255, 0.9);
+            font-weight: 500;
+        }
+
+        /* Contact Section */
+        .contact-section {
+            padding: 100px 0;
+            background: linear-gradient(to bottom, #252424, #f8f9fa);
+        }
+
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 50px;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .contact-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 25px;
+            background: white;
+            border-radius: 15px;
+            transition: var(--transition);
+            box-shadow: var(--shadow);
+        }
+
+        .contact-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-icon {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+            transition: var(--transition);
+        }
+
+        .contact-card:hover .contact-icon {
+            transform: scale(1.2);
+            color: var(--accent-color);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 80px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-accent);
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 50px;
+            margin-bottom: 50px;
+        }
+
+        .footer-logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+
+        .footer-logo img {
+            height: 60px;
+            width: 60px;
+            border-radius: 50%;
+            border: 2px solid var(--accent-color);
+            box-shadow: var(--glow);
+            transition: var(--transition);
+        }
+
+        .footer-logo:hover img {
+            transform: rotate(5deg);
+        }
+
+        .footer-logo-text h3 {
+            color: white;
+            margin-bottom: 8px;
+            font-size: 1.5rem;
+        }
+
+        .footer-links h4 {
+            color: white;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .footer-links h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            border-radius: 2px;
+            box-shadow: var(--glow);
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links a {
+            transition: var(--transition);
+            display: inline-block;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent-color);
+            padding-left: 8px;
+            transform: translateX(5px);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 25px;
+        }
+
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            background-color: var(--accent-color);
+            color: var(--text-color);
+            transform: translateY(-5px);
+            box-shadow: var(--glow);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-accent);
+            color: var(--text-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
+            z-index: 999;
+        }
+
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            background: var(--gradient-primary);
+            color: white;
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .notice-container,
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .about-image {
+                order: -1;
+            }
+            
+            .events-timeline::before {
+                left: 30px;
+            }
+            
+            .event-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 0;
+            }
+            
+            .event-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .event-item::after {
+                left: 20px !important;
+            }
+            
+            .hero h1 {
+                font-size: 3rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                display: none;
+            }
+            
+            nav.active {
+                display: block;
+                margin-top: 15px;
+            }
+            
+            .committee-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .image-slider {
+                aspect-ratio: 16/9;
+            }
+            
+            .section-title h2 {
+                font-size: 2.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .committee-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 1.8rem;
+            }
+            
+            .prayer-card {
+                padding: 20px;
+            }
+            
+            .service-card {
+                padding: 25px 20px;
+            }
+            
+            .contact-form {
+                padding: 25px;
+            }
+            
+            .back-to-top {
+                width: 50px;
+                height: 50px;
+                font-size: 1.2rem;
+                bottom: 20px;
+                right: 20px;
+            }
+        }
+
+        /* Chatbot Integration Styles */
+        
+        .chatbot-container {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 1000;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .chatbot-button {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .chatbot-button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .chatbot-window {
+            position: absolute;
+            bottom: 70px;
+            right: 0;
+            width: 350px;
+            height: 450px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: none;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+
+        .chatbot-window.active {
+            display: flex;
+        }
+
+        .chatbot-header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .chatbot-header h3 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: white;
+        }
+
+        .chatbot-close {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+        }
+
+        .chatbot-messages {
+            flex: 1;
+            padding: 15px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: #f5f5f5;
+        }
+
+        .chatbot-message {
+            max-width: 80%;
+            padding: 10px 15px;
+            border-radius: 18px;
+            position: relative;
+            line-height: 1.5;
+            animation: messageAppear 0.3s ease;
+        }
+
+        .user-message {
+            align-self: flex-end;
+            background: var(--gradient-primary);
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+
+        .bot-message {
+            align-self: flex-start;
+            background: white;
+            color: var(--text-color);
+            border-bottom-left-radius: 5px;
+            border: 1px solid #e0e0e0;
+        }
+
+        .chatbot-image-container {
+            margin-top: 8px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            max-width: 100%;
+        }
+
+        .chatbot-image {
+            max-width: 140px;
+            max-height: 140px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            transition: var(--transition);
+            object-fit: cover;
+        }
+
+        .chatbot-image:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .chatbot-input {
+            display: flex;
+            padding: 15px;
+            background: white;
+            border-top: 1px solid #e0e0e0;
+            gap: 10px;
+        }
+
+        .chatbot-input input {
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid #e0e0e0;
+            border-radius: 50px;
+            outline: none;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .chatbot-input button {
+            padding: 12px 20px;
+            border: none;
+            border-radius: 50px;
+            background: var(--gradient-primary);
+            color: white;
+            font-weight: 500;
+            cursor: pointer;
+            transition: var(--transition);
+        }
+
+        .chatbot-input button:hover {
+            transform: scale(1.05);
+        }
+
+        .typing-indicator {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            padding: 10px 15px;
+            background: white;
+            border-radius: 18px;
+            border: 1px solid #e0e0e0;
+            align-self: flex-start;
+        }
+
+        .typing-dot {
+            width: 8px;
+            height: 8px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            animation: typingAnimation 1.4s infinite ease-in-out;
+        }
+
+        .typing-dot:nth-child(1) { animation-delay: 0s; }
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes typingAnimation {
+            0%, 60%, 100% {
+                transform: translateY(0);
+                opacity: 0.6;
+            }
+            30% {
+                transform: translateY(-5px);
+                opacity: 1;
+            }
+        }
+
+        @keyframes messageAppear {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .chatbot-window {
+                width: 300px;
+                height: 400px;
+                right: -20px;
+            }
+            
+            .chatbot-container {
+                right: 20px;
+                bottom: 20px;
+            }
+            
+            .chatbot-image {
+                max-width: 120px;
+                max-height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <div class="logo">
+                <img src="images/masjidlogo.jpg" alt="Madeena Masjid Logo">
+                <div class="logo-text">
+                    <h1>Madeena Masjid</h1>
+                    <p>Dubauli - Center of Faith</p>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav id="mainNav">
+                <ul>
+                    <li><a href="#home" class="active">Home</a></li>
+                    <li><a href="#notice">Notice</a></li>
+                    <li><a href="#prayer-times">Prayer Times</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Services</a></li>
+                    <li><a href="#events">Events</a></li>
+                    <li><a href="#committee">Committee</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Welcome to Madeena Masjid Dubauli</h1>
+                <p>A center for worship, education, and community development in Dubauli village</p>
+                <div class="hero-btns">
+                    <a href="#prayer-times" class="btn btn-primary">Prayer (Namaz) Times</a>
+                    <a href="#contact" class="btn">Get Directions</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Notice Section -->
+    <section class="notice-section" id="notice">
+        <div class="container">
+            <div class="section-title">
+                <h2>Important Notice</h2>
+            </div>
+            
+            <div class="notice-container">
+                <div class="notice-content">
+                    <h3>Sab-e-barat & Ramadan Celebration</h3>
+                    <p>We are pleased to announce that the celebration of Sab-e-barat & Ramadan will be held on 4th February 2026 & Ramadan celebration on 17 feb to 19 feb 2026 at Madeena Masjid Dubauli.</p>
+                    <p>The program will include:</p>
+                    <ul>
+                        <li>Special prayers, Milaad and Durood</li>
+                        <li>Speeches about the life of Prophet Muhammad, deen and islamic bate for sawab and beneficial things to all of Muslim people</li>
+                        <li>Community feast for all attendees</li>
+                        <li>Distribution of gifts for children  and IFTAAR program in masjid </li>
+                    </ul>
+                    <p>All community members are cordially invited to participate in this blessed event. Please arrive by 6:00 PM for the start of the program (Meelaad).</p>
+                    <p>For any questions or to contribute to the arrangements, please contact the mosque committee members.</p>
+                </div>
+                
+                <div class="notice-image">
+                   <div class="notice-slider">
+                      <div class="slide"><img src="images/12 rabi ul awwal1.jpg" alt="Notice Image 1"></div>
+                      <div class="slide"><img src="images/12 rabi ul awwal2.jpg" alt="Notice Image 2"></div>
+                      <div class="slide"><img src="images/notice3.jpg" alt="Notice Image 3"></div>
+                   </div>
+
+                 <!-- Navigation dots -->
+                  <div class="notice-dots">
+                      <span class="dot active"></span>
+                      <span class="dot"></span>
+                      <span class="dot"></span>
+                 </div>
+               </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Prayer (Namaz) Times Section -->
+    <section class="prayer-times-section" id="prayer-times">
+        <div class="container">
+            <div class="section-title">
+                <h2>Prayer (Namaz) Times</h2>
+            </div>
+            
+            <div class="prayer-times-container" id="prayerTimesContainer">
+
+                <!-- Prayer times will be inserted here by JavaScript -->
+            </div>
+            
+           <div class="hijri-date" id="hijriDate">
+    <i class="fas fa-calendar-alt"></i>
+    Today is <span id="hijriDateText"></span><br>
+    <small><span id="englishDateText"></span></small>
+</div>
+
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Our Mosque</h2>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>History About Our Village</h2>
+                    <p>Madeena Masjid in Dubauli village was established in 1985 to serve the growing Muslim community in the area. Over the years, it has become not just a place of worship but a center for Islamic education and community development.</p>
+                    <p>Our mission is to provide a spiritual home for Muslims in the region, offering daily prayers, Friday congregations, Islamic classes for children and adults, and various community services.</p>
+                    <p>The mosque has undergone several expansions to accommodate the growing number of worshippers and now features separate prayer areas for men and women, a madrasa, and a community center.</p>
+                    <p>दुबौली गांव में मदीना मस्जिद की स्थापना 1985 में क्षेत्र के बढ़ते मुस्लिम समुदाय की सेवा के लिए की गई थी। वर्षों से, यह न केवल इबादत की जगह बल्कि इस्लामी शिक्षा और सामुदायिक विकास का एक केंद्र बन गई है।</p>
+                    <p>हमारा लक्ष्य क्षेत्र के मुसलमानों के लिए एक आध्यात्मिक घर प्रदान करना है, जहाँ दैनिक नमाज़, जुमे की जमात, बच्चों और वयस्कों के लिए इस्लामी कक्षाएं और विभिन्न सामुदायिक सेवाएँ उपलब्ध हों।</p>
+                    <p>नमाज़ियों की बढ़ती संख्या को देखते हुए मस्जिद का कई बार विस्तार किया गया है। अब यहाँ पुरुषों और महिलाओं के लिए अलग-अलग प्रार्थना क्षेत्र, एक मदरसा और एक सामुदायिक केंद्र भी शामिल है।</p>
+                    <a href="#services" class="btn btn-primary" style="margin-top: 20px;">Our Services</a>
+                </div>
+                
+                <!-- Image Slider -->
+                <div class="image-slider">
+                    <div class="slider-container" id="sliderContainer">
+                        <div class="slider-slide">
+                            <img src="images/masjid1.jpg" alt="Madeena Masjid Exterior">
+                        </div>
+                        <div class="slider-slide">
+                            <img src="images/masjid2.jpg" alt="Prayer Hall">
+                        </div>
+                        <div class="slider-slide">
+                            <img src="/images/masjidlogo.jpg" alt="Community Gathering">
+                        </div>
+                        <div class="slider-slide">
+                            <img src="images/masjid4.jpg" alt="Madrasa Classes">
+                        </div>
+                    </div>
+                    <div class="slider-nav" id="sliderNav">
+                        <div class="slider-dot active" data-index="0"></div>
+                        <div class="slider-dot" data-index="1"></div>
+                        <div class="slider-dot" data-index="2"></div>
+                        <div class="slider-dot" data-index="3"></div>
+                    </div>
+                </div>
+                
+                  <!-- New link Add for more photos to view -->
+                <p style="text-align: center; margin-top: 15px;">
+                       <a href="https://photos.app.goo.gl/Bhf1XzexX4QwX1eh8" class="btn btn-primary" target="_blank">Click on this link to view more photos<br>
+                      यहाँ क्लिक करके और तस्वीरें देख सकते हैँ 👆</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Services</h2>
+                <p>We provide various services to our community members</p>
+            </div>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-pray"></i>
+                    </div>
+                    <h3>Daily Prayers</h3>
+                    <p>All five daily prayers are held in congregation at the mosque with Imam leading the prayers.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-book-quran"></i>
+                    </div>
+                    <h3>Quran Classes</h3>
+                    <p>Daily Quran memorization and recitation classes for children and adults of all ages.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-microphone"></i>
+                    </div>
+                    <h3>Friday Khutbah</h3>
+                    <p>Weekly Friday prayer with khutbah in Urdu and Arabic, addressing contemporary issues.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <h3>Islamic Education</h3>
+                    <p>Comprehensive Islamic studies program covering Aqeedah, Fiqh, Seerah and Hadith.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-hands-helping"></i>
+                    </div>
+                    <h3>Community Support</h3>
+                    <p>Marriage services, funeral arrangements, and counseling for community members.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3>Ramadan Services</h3>
+                    <p>Daily iftar during Ramadan, Taraweeh prayers, and special night programs.</p>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-kitchen-set"></i>
+                    </div>
+                    <h3>Rented Pot</h3>
+                    <p>Marriage services, funeral arrangements, or any occation you can take Pot from here by paying some money.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events-section" id="events">
+        <div class="container">
+            <div class="section-title">
+                <h2>Upcoming Events</h2>
+                <p>Join us for these special programs and activities</p>
+            </div>
+            
+            <div class="events-timeline">
+                <div class="event-item">
+                    <div class="event-content">
+                        <div class="event-date">September 5, 2025</div>
+                        <h3>Shab-e-barat & Ramadan functions</h3>
+                        <p>Join us for the celebration of the Shab-e-barat which is the best night for all of nights and this is the night which decide our place after our death that where we will go in JAHNNAm. <br>
+                        and in this of night decide about our AMAAl and RIZK, and we have to prayer for our that relatives member which is not in this world means who have been died.</p>
+                    </div>
+                </div>
+                
+                <div class="event-item">
+                    <div class="event-content">
+                        <div class="event-date">17 feb to 18 march 2026</div>
+                        <h3>Ramadan celebration of IFTAAR and Prayers NAMAZ and TARAVEEH</h3>
+                        <p>One Month of conference with renowned scholars discussing contemporary issues facing the Muslim community.</p>
+                    </div>
+                </div>
+                
+                <div class="event-item">
+                    <div class="event-content">
+                        <div class="event-date">March 15 (Max day of Ramadan), 2026 | 6:00 PM</div>
+                        <h3>Community Iftar Gathering</h3>
+                        <p>Monthly community iftar gathering to strengthen bonds between community members.</p>
+                    </div>
+                </div>
+                
+                <div class="event-item">
+                    <div class="event-content">
+                        <div class="event-date">MArch 2026 | Daily</div>
+                        <h3>Summer Quran Intensive</h3>
+                        <p>A month-long intensive program for children to memorize selected surahs and learn proper tajweed. Registration required.</p>
+                    </div>
+                </div>
+                 <div class="event-item">
+                <div class="event-content">
+                    <img src="images/scanner.jpg" alt="Notice for villagers">
+                    <p class="notice-date">Donations</p>
+                    <p>Pay your donations for development of our masjid and poor villagers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Committee Section -->
+    <section class="committee-section" id="committee">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Committee Members</h2>
+                <p>Dedicated individuals serving our community</p>
+            </div>
+            
+            <div class="committee-grid">
+
+                <!-- Add details about Current Imaam of Duabuli here -->
+                <div class="committee-card">
+                    <div class="member-image">
+                        <img src="images/SaifuddinMaulana.jpg" alt="Saifuddin Sahab">
+                        <div class="social-links">
+                            <a href="http://wa.me/917860117132"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fas fa-phone-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Saifuddin Sahab</h3>
+                        <p class="position">Current IMAAM SAHAB</p>
+                        <p class="tenure">Since 2022</p>
+                        <p class="contact">7379820186</p>
+                    </div>
+                </div>
+                
+                <div class="committee-card">
+                    <div class="member-image">
+                        <img src="images/RamjanAli.jpg" alt="Ramjan Ali">
+                        <div class="social-links">
+                            <a href="http://wa.me/917379830186"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fas fa-phone-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Ramjan Ali</h3>
+                        <p class="position">Chairman (MANAGER)</p>
+                        <p class="tenure">Since 2021</p>
+                        <p class="contact">9628143486</p>
+                    </div>
+                </div>
+                
+                <div class="committee-card">
+                    <div class="member-image">
+                        <img src="images/AzharuddinAnsari.jpg" alt="Azharuddin Ansari">
+                        <div class="social-links">
+                            <a href="http://wa.me/917860117132"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fas fa-phone-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Azharuddin Ansari</h3>
+                        <p class="position">Clerk(SECRETORY)</p>
+                        <p class="tenure">Since 2022</p>
+                        <p class="contact">78601117132</p>
+                    </div>
+                </div>
+                
+                <div class="committee-card">
+                    <div class="member-image">
+                        <img src="images/HaidarMiyan.jpg" alt="Haidar Miyan">
+                        <div class="social-links">
+                            <a href="http://wa.me/919648163215"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fas fa-phone-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Haidar Miyan</h3>
+                        <p class="position">Cashier (KHAJANCHI)</p>
+                        <p class="tenure">Since 2021</p>
+                        <p class="contact">9648163215</p>
+                    </div>
+                </div>
+                
+                <div class="committee-card">
+                    <div class="member-image">
+                        <img src="images/SobaratiMiyan.jpg" alt="Sobarati Miyan">
+                        <div class="social-links">
+                            <a href="http://wa.me/917379841421"><i class="fab fa-whatsapp"></i></a>
+                            <a href="#"><i class="fas fa-phone-alt"></i></a>
+                        </div>
+                    </div>
+                    <div class="member-info">
+                        <h3>Sobarati Miyan</h3>
+                        <p class="position">Helping Person (SADAR)</p>
+                        <p class="tenure">Since 2023</p>
+                        <p class="contact">7379841421</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Us</h2>
+                <p>Get in touch with the mosque administration</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Address</h4>
+                           <p>Vill. Dubauli, Post. Fazilnagar, Dist. Kushinagr, Uttar Pradesh 274401</p>
+                <a href="https://maps.google.com/?q=Masjid+Dubauli+Uttar+Pradesh" target="_blank" class="btn btn-primary">Touch to View on Google Map 👆</a>
+                        </div>
+                    </div>
+            
+                   
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p><b>madeenamasjiddubauli@gmail.com</b></p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Office Hours</h4>
+                            <p>EVERYDAY 24*7</p>
+                        </div>
+                    </div>
+                     <div class="contact-card">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+91 9628143486 , +91 737916****</p>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <div class="footer-logo">
+                        <img src="images/masjidlogo.jpg" alt="Madeena Masjid Logo">
+                        <div class="footer-logo-text">
+                            <h3>Madeena Masjid Dubauli</h3>
+                            <p>Dubauli, Uttar Pradesh</p>
+                        </div>
+                    </div>
+                    <p>Madeena Masjid serves as a center for worship, education, and community development in Dubauli village since 1985.</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#notice">Notice</a></li>
+                        <li><a href="#prayer-times">Prayer Times</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#events">Events</a></li>
+                        <li><a href="#committee">Committee</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Services</h4>
+                    <ul>
+                        <li><a href="#">Daily Prayers</a></li>
+                        <li><a href="#">Quran Classes</a></li>
+                        <li><a href="#">Islamic Education</a></li>
+                        <li><a href="#">Marriage Services</a></li>
+                        <li><a href="#">Funeral Services</a></li>
+                        <li><a href="#">Community Support</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Dubauli, UP 274401</li>
+                        <li><i class="fas fa-phone-alt"></i> +91 9628143486</li>
+                        <li><i class="fas fa-envelope"></i> madeenamasjiddubauli@gmail.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Madeena Masjid Dubauli. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Chatbot Container -->
+    <div class="chatbot-container">
+        <div class="chatbot-button" id="chatbotButton">
+            <i class="fas fa-comments"></i>
+        </div>
+        <div class="chatbot-window" id="chatbotWindow">
+            <div class="chatbot-header">
+                <h3>Dubauli Village Assistant</h3>
+                <button class="chatbot-close" id="chatbotClose">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="chatbot-messages" id="chatbotMessages">
+                <div class="chatbot-message bot-message">
+                    <b>Assalamualaikum🤝! Namaste🙏!</b><br>Welcome to Dubauli Village Assistant. How can I help you today?
+                </div>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatbotInput" placeholder="Type your question here...">
+                <button id="chatbotSend">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Mobile Menu Toggle
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mainNav = document.getElementById('mainNav');
+            
+            if (mobileMenuBtn && mainNav) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    mainNav.classList.toggle('active');
+                    mobileMenuBtn.innerHTML = mainNav.classList.contains('active') ? 
+                        '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+                });
+            }
+            
+            // Smooth Scrolling for Navigation Links
+            document.querySelectorAll('nav a').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                        
+                        // Close mobile menu if open
+                        if (mainNav && mainNav.classList.contains('active')) {
+                            mainNav.classList.remove('active');
+                            if (mobileMenuBtn) {
+                                mobileMenuBtn.innerHTML = '<i class="fas fa-bars"></i>';
+                            }
+                        }
+                    }
+                });
+            });
+            
+            // Header Scroll Effect
+            const header = document.getElementById('header');
+            
+            if (header) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 100) {
+                        header.classList.add('scrolled');
+                    } else {
+                        header.classList.remove('scrolled');
+                    }
+                });
+            }
+            
+            // Back to Top Button
+            const backToTopBtn = document.getElementById('backToTop');
+            
+            if (backToTopBtn) {
+                window.addEventListener('scroll', () => {
+                    if (window.scrollY > 300) {
+                        backToTopBtn.classList.add('active');
+                    } else {
+                        backToTopBtn.classList.remove('active');
+                    }
+                });
+                
+                backToTopBtn.addEventListener('click', () => {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+            
+            // Prayer Times
+            const prayerTimesContainer = document.getElementById('prayerTimesContainer');
+            const hijriDateText = document.getElementById('hijriDateText');
+            
+            // Sample prayer times data
+            const prayerTimes = [
+                { name: 'Fajr', time: '4:15 AM', iqamah: '5:00 AM' },
+                { name: 'Sunrise', time: '5:30 AM', iqamah: '' },
+                { name: 'Dhuhr', time: '12:30 PM', iqamah: '1:20 PM' },
+                { name: 'Asr', time: '4:45 PM', iqamah: '5:00 PM' },
+                { name: 'Maghrib', time: '7:05 PM', iqamah: '7:10 PM' },
+                { name: 'Isha', time: '8:15 PM', iqamah: '8:30 PM' }
+            ];
+            
+            // Function to determine which prayer is currently active
+            function getCurrentPrayer() {
+                const now = new Date();
+                const hours = now.getHours();
+                const minutes = now.getMinutes();
+                const currentTime = hours * 60 + minutes;
+                
+                const prayerTimesInMinutes = [
+                    4 * 60 + 15,   // Fajr
+                    5 * 60 + 30,    // Sunrise
+                    12 * 60 + 30,   // Dhuhr
+                    16 * 60 + 45,    // Asr
+                    19 * 60 + 5,     // Maghrib
+                    20 * 60 + 15     // Isha
+                ];
+                
+                if (currentTime >= prayerTimesInMinutes[0] && currentTime < prayerTimesInMinutes[1]) return 0;
+                if (currentTime >= prayerTimesInMinutes[1] && currentTime < prayerTimesInMinutes[2]) return 1;
+                if (currentTime >= prayerTimesInMinutes[2] && currentTime < prayerTimesInMinutes[3]) return 2;
+                if (currentTime >= prayerTimesInMinutes[3] && currentTime < prayerTimesInMinutes[4]) return 3;
+                if (currentTime >= prayerTimesInMinutes[4] && currentTime < prayerTimesInMinutes[5]) return 4;
+                return 5;
+            }
+            
+            // Display prayer times
+            function displayPrayerTimes() {
+                if (prayerTimesContainer) {
+                    const currentPrayerIndex = getCurrentPrayer();
+                    
+                    prayerTimesContainer.innerHTML = prayerTimes.map((prayer, index) => `
+                        <div class="prayer-card ${index === currentPrayerIndex ? 'active' : ''}">
+                            <div class="prayer-name">${prayer.name}</div>
+                            <div class="prayer-time">${prayer.time}</div>
+                            ${prayer.iqamah ? `<div class="prayer-adhan">Iqamah: ${prayer.iqamah}</div>` : ''}
+                        </div>
+                    `).join('');
+                }
+            }
+            
+            // Display Hijri date
+            function displayHijriDate() {
+                if (hijriDateText) {
+                    const gregorianDate = new Date();
+                    const hijriDate = new Intl.DateTimeFormat('en-u-ca-islamic', {
+                        day: 'numeric',
+                        month: 'long',
+                        year: 'numeric'
+                    }).format(gregorianDate);
+                    
+                    hijriDateText.textContent = hijriDate;
+                }
+            }
+            
+            // Display English date 
+             const today = new Date();
+             const options = { day: 'numeric', month: 'long', year: 'numeric' };
+             const englishDate = today.toLocaleDateString('en-GB', options);
+
+             document.getElementById("englishDateText").innerText =
+             "English Date: " + englishDate;
+            
+            // Image Slider
+            const sliderContainer = document.getElementById('sliderContainer');
+            const sliderNav = document.getElementById('sliderNav');
+            
+            if (sliderContainer && sliderNav) {
+                const sliderDots = sliderNav.querySelectorAll('.slider-dot');
+                let currentSlide = 0;
+                const slideCount = sliderContainer.children.length;
+                let slideInterval;
+                
+                function goToSlide(index) {
+                    if (index < 0) index = slideCount - 1;
+                    if (index >= slideCount) index = 0;
+                    
+                    currentSlide = index;
+                    sliderContainer.style.transform = `translateX(-${currentSlide * 100}%)`;
+                    
+                    sliderDots.forEach((dot, i) => {
+                        dot.classList.toggle('active', i === currentSlide);
+                    });
+                }
+                
+                function nextSlide() {
+                    goToSlide(currentSlide + 1);
+                }
+                
+                function startSlider() {
+                    slideInterval = setInterval(nextSlide, 3000);
+                }
+                
+                function stopSlider() {
+                    clearInterval(slideInterval);
+                }
+                
+                sliderDots.forEach(dot => {
+                    dot.addEventListener('click', () => {
+                        const slideIndex = parseInt(dot.getAttribute('data-index'));
+                        goToSlide(slideIndex);
+                        stopSlider();
+                        startSlider();
+                    });
+                });
+                
+                startSlider();
+                
+                const slider = document.querySelector('.image-slider');
+                if (slider) {
+                    slider.addEventListener('mouseenter', stopSlider);
+                    slider.addEventListener('mouseleave', startSlider);
+                }
+            }
+            
+            // Notice Section Image Slider
+            const noticeSlider = document.querySelector('.notice-slider');
+            const noticeDots = document.querySelectorAll('.notice-dots .dot');
+            
+            if (noticeSlider && noticeDots.length > 0) {
+                let noticeIndex = 0;
+
+                function showNoticeSlide(i) {
+                    noticeIndex = i;
+                    noticeSlider.style.transform = `translateX(-${i * 100}%)`;
+                    noticeDots.forEach(dot => dot.classList.remove('active'));
+                    noticeDots[i].classList.add('active');
+                }
+
+                noticeDots.forEach((dot, i) => {
+                    dot.addEventListener('click', () => showNoticeSlide(i));
+                });
+
+                setInterval(() => {
+                    noticeIndex = (noticeIndex + 1) % noticeDots.length;
+                    showNoticeSlide(noticeIndex);
+                }, 5000);
+            }
+            
+            // Initialize
+            displayPrayerTimes();
+            displayHijriDate();
+            
+            // Update prayer times every minute
+            setInterval(displayPrayerTimes, 60000);
+            
+            // Animation on scroll
+            const animateOnScroll = () => {
+                const elements = document.querySelectorAll('.prayer-card, .event-item, .service-card, .committee-card');
+                
+                elements.forEach(element => {
+                    const elementPosition = element.getBoundingClientRect().top;
+                    const screenPosition = window.innerHeight / 1.2;
+                    
+                    if (elementPosition < screenPosition) {
+                        element.style.animationPlayState = 'running';
+                    }
+                });
+            };
+            
+            window.addEventListener('scroll', animateOnScroll);
+            window.addEventListener('load', animateOnScroll);
+            
+                                // ========== CHATBOT CODE ==========
+
+            // Chatbot elements
+            const chatbotButton = document.getElementById('chatbotButton');
+            const chatbotWindow = document.getElementById('chatbotWindow');
+            const chatbotClose = document.getElementById('chatbotClose');
+            const chatbotMessages = document.getElementById('chatbotMessages');
+            const chatbotInput = document.getElementById('chatbotInput');
+            const chatbotSend = document.getElementById('chatbotSend');
+            
+            // Initialize chatbot if elements exist
+            if (chatbotButton && chatbotWindow && chatbotClose && chatbotMessages) {
+                console.log("Chatbot elements found, initializing...");
+                
+                // Chatbot data (Village Information)
+                const sampleData = {
+                    "questions": [
+                {
+                    "keywords": ["namaste", "hello", "hi", "hii", "hlo", "hey"],
+                    "answer": "Namaste🙏! Assalamualaikum🤝! <br>मैं आपकी क्या मदद कर सकता हूँ? <br>How can i help you?"
+                },
+                {
+                    "keywords": ["assalamualaikum"],
+                    "answer": "Walekum Assalam🤝<br> mai Aiman Chatbot🤖 apko kya puchhna hai?"
+                },
+                {
+                    "keywords": ["tumhara naam", "name", "kaun", "who are you", "kon"],
+                    "answer": "मेरा नाम Aiman ChatBot है. <br>मुझे अरमान भाई ने बनाया है. मैं यहाँ आपकी मदद के लिए हूँ आप क्या पूछना चाहते है मुझसे Dubauli के बारे में?<br><b>Arman Ali</b>",
+                    "images" : ["images/armanali.jpg"]
+                },
+                {
+                    "keywords": ["shukriya", "thank you", "thanks", "noo", "nahi", "nh"],
+                    "answer": "Thank you so much ! <br>agar aur kuchh Duabuli gaon ke bare me janana h to aap jarur puchh skte h."
+                },
+                {
+                    "keywords": ["school", "pathshala", "vidyalaya", "education", "college"],
+                    "answer": "1 Gov Primary School, Primary pathshala Dubauli Basdeela Kushinagar up  <br>near Panchayat bhawan Dubauli fazilnagar."
+                },
+                {
+                    "keywords": ["masjid", "mosque", "namaz"],
+                    "answer": "Madeena Masjid Dubauli, Fazilnagar kushinagar (up)",
+                    "images" : ["images/masjid1.jpg", "images/masjid2.jpg"]
+                },
+                {
+                    "keywords": ["bijli", "electricity", "power", "light"],
+                    "answer": "UPPCL Office, Fazilnagar."
+                },
+                {
+                    "keywords": ["health", "swasthya", "doctor", "hospital", "aspatal", "medical", "patient", "mareej", "medicine", "dawai", "dawai ka dukan"],
+                    "answer": "Swasthya samasya ke liye , koi hospital nahi hai <br>lekin 2 medical stores <br>1 Shiv Shankar medical store Vikas nagar chauraha Dubauli mo.8052242981,<br> 2. Veera medical store near Vikas nagar chauraha mo.9565262933) <br>आप इनके यहाँ अपने छोटे छोटे बिमारियों का इलाज भी करा सकते हैं Emergency helpline: 108"
+                },
+                {
+                    "keywords": ["information", "details about village", "about dubauli", "address", "post", "district", "block", "tahseel", "state", "village", "police", "station", "gaon ka naam", "naam","jeela"],
+                    "answer": "Vill. Dubauli, <br>Post & block. Fazilnagar, <br>Dist. Kushinagar, <br>pin code. 274401, <br>tahseel. Kasia, <br>thana. Chaura Khas, <br>vidhansabha 332."
+                },
+                {
+                    "keywords": ["panchayat", "panchayat bhawan"],
+                    "answer": "Panchayat Bhawan Dubauli near Gov Primary School Dubauli Basdeela (gaon ke paschim disha me)."
+                },
+                {
+                    "keywords": ["members", "sadar", "chairman", "khajanchi", "cashier", "secratory"],
+                    "answer": "Chairman = Ramjan Ali mo.9628143486, <br>secrectory = Azharuddin Ansari mo.7860117132, <br>cashier = Haidar Ansari mo. ----------, <br>Sadar = Sobrati Ali mo. ----------."
+                },
+                {
+                    "keywords": ["maulana", "imam", "hafiji", "hafiz"],
+                    "answer": "Saifuddin Sahab (mo. 7379820186) since 2017, home-town Dhanauji."
+                },
+                {
+                    "keywords": ["vote", "voting", "voters"],
+                    "answer": "total voters = 607 (in 2025) , <br>male voters = 330, <br>female voters = 277."
+                },
+                {
+                    "keywords": ["pradhan", "mukhiya", "sarpanch"],
+                    "answer": "Ajay Tiwari (Devichak), mo.9918729099 since 2021-2026."
+                },
+                {
+                    "keywords": ["bdc", "sadasya"],
+                    "answer": "BDC = ............., mo. _________, (--); <br>Sadasya = ..........., mo. __________,(--)."
+                },
+                {
+                    "keywords": ["public", "log", "ladke", "ladkiya", "mahilaye", "male", "female", "peple", "children", "child"],
+                    "answer": "total Public = 2000+, <br>male = --, <br>female = --, <br>children = ---;."
+                },
+                {
+                    "keywords": ["shop", "grocery", "dukan", "dukaan","kirana store", "store", "kirana"],
+                    "answer": "1.Sujeet Kirana store Dubauli mo. 9918180679; <br>2.Shiv Kirana store (near pipal ped) mo. 8052242981; <br>3.Munna Kirana store mo._________(near pipal ped)."
+                },
+                {
+                    "keywords": ["mandir", "temple", "puja", "worship", "pujari"],
+                    "answer": "1.kali mandeer Dubauli (near Gov primary school Duabuli) pujari. ........ mo.,,,,,,,,,,,, ; <br>2. Baram baba ka sthan Dubauli."
+                },
+                {
+                    "keywords": ["home", "house", "building", "makan", "makaan", "ghar", "aawash"],
+                    "answer": "Total ghar = 150+; <br>Total Muslim Ghar = 80+; <br>Total Hindu ghar = 70+;"
+                },
+                {
+                    "keywords": ["caste", "jangadna", "illiterates", "literate"],
+                    "answer": "2011 KE JANGADANA KE ANUSHAR <br>Sex Ratio (2011): 1014 <br>Population (2011) = 713<br> Male = 354 <br>Female = 359<br>Child Population (0-6 yrs)=127 (66M,61F)<br>Scheduled Castes (SC)= 8 (4M,4F)<br>Scheduled Tribes (ST)=4 (2M,2F)<br>Literate Population=484 (272M,212F)<br>Illiterate Population=229 (82M, 147F) <br>Households : 108 <br>According to the 2011 Census, the literacy rate in Tekulia Urf Dubauli is 67.88%. The male literacy rate is 76.84%, while the female literacy rate is 59.05%."
+                },
+                {
+                    "keywords": ["eidgah", "kabar", "kabristan", "samshan"],
+                    "answer": "1 eidgah (gaon ke ekdam pashchim disha me near kabristan) ; <br>1 Kabristaan near Gov primary school Dubauli,<br>1.Samshanghat near gov promary school Dubauli....",
+                    "images" : ["images/Botimages/eidgaah1.jpg" , "images/Botimages/eidgaah2.jpg" ,"images/Botimages/eidgaah3.jpg", "images/Botimages/kabristan1.jpg", "images/Botimages/kabristan2.jpg", "images/Botimages/kabristan3.jpg"]
+                },
+                {
+                    "keywords": ["thanks", "dhanyavad", "thank you", "shukriya", "good"],
+                    "answer": "Thank you 😊 <br>आप मुझे कभी भी कोई भी प्रश्न पूछ सकते हैं......"
+                },
+                {
+                    "keywords": ["namaste", "hello", "salam", "ram ram", "assalamualaikum"],
+                    "answer": "Namaste! Aapka swagat hai Dubauli gaon chatbot me."
+                },
+                {
+                    "keywords": ["kaise ho", "aap kaise ho", "hoe are you"],
+                    "answer": "Main theek hoon, aap kaise ho?"
+                },
+                {
+                    "keywords": ["dhanyawaad", "shukriya"],
+                    "answer": "Aapka bhi dhanyawaad!"
+                },
+                {
+                    "keywords": ["gaon ka naam", "village's name"],
+                    "answer": "Gaon ka naam Dubauli hai."
+                },
+                {
+                    "keywords": ["population", "aabadi"],
+                    "answer": "Abadi: 2011 KE JANGADANA KE ANUSHAR Population/aabadi = 713 <br>Sex Ratio (2011): 1014"
+                },
+                {
+                    "keywords": ["total area", "kshetra"],
+                    "answer": "Total area:Total area of Dubauli Gaon = 42.77 Hectares (427700 square metre)."
+                },
+                {
+                    "keywords": ["map", "naksha"],
+                    "answer": "Google map coordinates = 26.67214780638192, 84.0319643502232"
+                },
+                {
+                    "keywords": ["history", "itihaas"],
+                    "answer": "Gaon ka itihaas: अभी इसकी जानकारी उपलब्ध नहीं है "
+                },
+                {
+                    "keywords": ["language", "boli", "bhasha"],
+                    "answer": "Yahan log Hindi, Bhojpuri , English aur thoda Urdu bolte hain."
+                },
+                {
+                    "keywords": ["caste", "samudaay"],
+                    "answer": "Yahan alag-alag samudaay ke log rehte hain. Muslim (Mansoori,Ansari), Hindu (Bhumihar,Gond,Patel,Yadav) etc.."
+                },
+                {
+                    "keywords": ["voter list"],
+                    "answer": "Gaon ki voter list gram panchayat office me uplabdh hai ya aap online bhi download kar skte hain."
+                },
+                {
+                    "keywords": ["mandir"],
+                    "answer": "Gaon me ek mandir sthit hai."
+                },
+                {
+                    "keywords": ["masjid"],
+                    "answer": "Gaon me ek masjid hai, jiska naam मदीना मस्जिद दुबौली hain."
+                },
+                {
+                    "keywords": ["madrsa","madarasa"],
+                    "answer": "एक मस्जिद है उसी मे बच्चे पढ़ते भी हैँ ."
+                },
+                {
+                    "keywords": ["maulana", "imam", "hafiz"],
+                    "answer": "Gaon ke imam sahab ka naam: .. .........."
+                },
+                {
+                    "keywords": ["tyohaar", "festival", "eid", "holi", "diwali"],
+                    "answer": "Gaon me Holi, Diwali, Eid, Raksha Bandhan aur dusre tyohaar mil jul kar manaye jate hain."
+                },
+                {
+                    "keywords": ["school"],
+                    "answer": "Gaon me ek hii prathmik school hai"
+                },
+                {
+                    "keywords": ["college"],
+                    "answer": "College sabse nazdeek hai: Gegree College Fazilnagar Garahiya Kushinar UP"
+                },
+                {
+                    "keywords": ["teacher"],
+                    "answer": "School ke shikshak: ............"
+                },
+                {
+                    "keywords": ["headmaster"],
+                    "answer": "Headmaster ka naam: ............"
+                },
+                {
+                    "keywords": ["admission", "result", "scholarship"],
+                    "answer": "Admission aur result ki jankari school/college se milegi. Scholarship ke liye UP Scholarship portal par apply karein."
+                },
+                {
+                    "keywords": ["health", "swasthya", "doctor", "hospital", "aspatal"],
+                    "answer": "Swasthya samasya ke liye aap gaon ke Quack (jhola chhap doctor) se ilaaz karwa skte. Emergency helpline: 108"
+                },
+                {
+                    "keywords": ["medicine", "dawa", "medical"],
+                    "answer": "Gaon me dawa ki dukaan: upar jo list hai wahi h"
+                },
+                {
+                    "keywords": ["ambulance"],
+                    "answer": "Ambulance ke liye 108 par call karein."
+                },
+                {
+                    "keywords": ["vaccination", "tika"],
+                    "answer": "Gaon me anganwadi aur PHC me tika lagta hai(Primary Government School."
+                },
+                {
+                    "keywords": ["kheti", "fasal"],
+                    "answer": "Gaon me dhan, gehun,ganna ,matar,masoor,moong,vegetables,makka etc. ki kheti hoti hai."
+                },
+                {
+                    "keywords": ["tractor"],
+                    "answer": "Kuch kisano ke paas tractor hai Jaise me  रमजान अली  , किरोसी राय , ब्रजेश राय... ."
+                },
+                {
+                    "keywords": ["beej", "khaad", "fertilizer"],
+                    "answer": "Beej aur khaad ki dukaan: KGN खाद भंडार विकास नगर चौराहा दुबौली <br>प्रो.अज़हरुद्दीन आली (भुटन भईया ) 9919346130<br>Everyday 27*7",
+                    "images" : ["images/Botimages/Azaharuddin Ali1.jpg"]
+                },
+                {
+                    "keywords": ["pashu", "gaay", "bhains", "bakri", "animals"],
+                    "answer": "Gaon me log gaay, bhains , Murgi aur bakri palte hain."
+                },
+                {
+                    "keywords": ["kisan credit card", "government subsidy"],
+                    "answer": "Kisan yojna aur subsidy ke liye krishi karyalaya me sampark karein."
+                },
+                {
+                    "keywords": ["ghar", "makan", "makaan"],
+                    "answer": "Gaon me zyadatar pakke aur kuchh kacche ghar hain."
+                },
+                {
+                    "keywords": ["awas", "aawas yojna"],
+                    "answer": "PM Awas Yojna ke under logon ko ghar diye ja rahe hain."
+                },
+                {
+                    "keywords": ["bijli", "electricity", "meter"],
+                    "answer": "Bijli ki suvidha gaon me uplabdh hai. Complaint ke liye UPPCL se sampark karein 1912."
+                },
+                {
+                    "keywords": ["pani", "nal", "water"],
+                    "answer": "Gaon me pani ke liye handpump aur nal dono hai."
+                },
+                {
+                    "keywords": ["sadak", "road", "pul", "bridge"],
+                    "answer": "Gaon ki sadak aur naale ki sthiti baki gaon se bekaar h"
+                },
+                {
+                    "keywords": ["anganwadi"],
+                    "answer": "Gaon me ek anganwadi kendra hai."
+                },
+                {
+                    "keywords": ["gram panchayat"],
+                    "answer": "Gram Panchayat office gaon primary school ke pass me hai gaon ke paschim disha me ."
+                },
+                {
+                    "keywords": ["ration card"],
+                    "answer": "Ration card ke liye panchayat office ya CSC center me jayein."
+                },
+                {
+                    "keywords": ["aadhaar card"],
+                    "answer": "Aadhaar update ke liye najdeek ke CSC par jayein."
+                },
+                {
+                    "keywords": ["pension", "pension yojna"],
+                    "answer": "Pension yojna ke liye samaj kalyan vibhag se sampark karein."
+                },
+                {
+                    "keywords": ["jan dhan", "yojna"],
+                    "answer": "Jan Dhan Yojna ke liye najdeek ke bank me jayein."
+                },
+                {
+                    "keywords": ["mnrega", "rojgar"],
+                    "answer": "MNREGA me rojgar uplabdh hota hai. Panchayat se sampark karein."
+                },
+                {
+                    "keywords": ["bazaar", "market"],
+                    "answer": "Sabse nazdeek bazaar Fazilnagar me hai."
+                },
+                {
+                    "keywords": ["kirana", "dukaan"],
+                    "answer": "Gaon me chhoti kirana ki yahi dukaane hain."
+                },
+                {
+                    "keywords": ["sabzi mandi", "sabji", "anaj mandi"],
+                    "answer": "Sabzi aur anaj mandi sthit hai: Fazilnagar"
+                },
+                {
+                    "keywords": ["bank", "atm"],
+                    "answer": "Gaon ke sabse nazdeek bank aur ATM: Fazilnagar"
+                },
+                {
+                    "keywords": ["post office"],
+                    "answer": "Post office sthit hai: Fazilnagar"
+                },
+                {
+                    "keywords": ["bus stand"],
+                    "answer": "Nazdeek ka bus stand Fazilnagar hai."
+                },
+                {
+                    "keywords": ["railway station"],
+                    "answer": "Nazdeek ka railway station Padrauna hai."
+                },
+                {
+                    "keywords": ["auto", "rickshaw", "e-rickshaw"],
+                    "answer": "Gaon me auto aur e-rickshaw uplabdh hai <br>1.Raju Ali s/o Munayab Ali <br>2. Saddam Husaain s/o Raheem Miyan"
+                },
+                {
+                    "keywords": ["mobile tower", "internet", "network"],
+                    "answer": "Gaon me Jio , Vodaphone aur Airtel ka network hai."
+                },
+                {
+                    "keywords": ["cricket", "kabbadi", "kushti"],
+                    "answer": "Gaon ke yuva in khelon me bhaag lete hain."
+                },
+                {
+                    "keywords": ["mela", "jhoola"],
+                    "answer": "Har saal yahan mela lagta hai. Eid , Bakra Eid"
+                },
+                {
+                    "keywords": ["song", "dance", "dhol", "baja"],
+                    "answer": "Shaadi aur tyohaar par geet aur nritya hote hain par Muslim logo ke liye ise band kar diya gya h (Orchestra)."
+                },
+                {
+                    "keywords": ["fire", "aag"],
+                    "answer": "Aag lagne par 101 par call karein."
+                },
+                {
+                    "keywords": ["police", "thana"],
+                    "answer": "Nazdeek ka thana Fazilnagar hai."
+                },
+                {
+                    "keywords": ["chori"],
+                    "answer": "Chori ki shikayat police station me karein."
+                },
+                {
+                    "keywords": ["accident", "durghatna"],
+                    "answer": "Accident hone par 108 par ambulance bulayein aur saath hi jitna ho sake madad kare."
+                },
+                {
+                    "keywords": ["flood", "barh"],
+                    "answer": "Barh ki sthiti me district administration se sampark karein aur ye area safe zone me aata h."
+                },
+                {
+                    "keywords": ["complaint", "shikayat"],
+                    "answer": "Shikayat ke liye gram pradhan ya sarkari helpline par sampark karein."
+                },
+                {
+                    "keywords": ["emergency number","important numbers","helpline","aapatkal","zaroori number"],
+                    "answer": "Police: 112, Ambulance: 108,Fire: 101, Women helpline: 181, Child helpline: 1098, Electricity complaint: 1912"
+                },
+                {
+                     "keywords": ["pm kisan","pm awas","ujjwala yojna","free ration","scholarship yojna"],
+                     "answer": "ye yojna Government of India ki taraf se chalaye gaye hain jinka laabh bahut logo ne liya h aap bhi le sakte hain iske bare me ur jankari aapko CSE cenrtre par mil jayegi"
+                },
+                {
+                    "keywords": ["job","naukri","rojgar office","private job","gaon me kaam"],
+                    "answer": "MNREGA, near Private Works (Fazilnagar, kushinagr, Padrauna cities), OutSide-State"
+                },
+                {
+                    "keywords": ["students career","youth","career","competition exam","army","police bharti"],
+                    "answwer" : "aapko skills badhana padega , aur nayee nayee aane wali bhartiyon ka pata karna hoga aur aapko uski taiayri jaise POLICE ki ARMY ki And other Government ki <br> prepartaion (taiayri) nearest Coaching Cente Kasia Kushinagar Afzilnagar me GKP me karni padegi"
+                },
+                {
+                    "keywords" : ["csc","online service","birth certificate","death certificate","income certificate"],
+                    "answer" : "in sab kamo ke liye aapko Fazilnagar Block Office and CSE centre me jana padega"
+                },
+                {
+                    "keywords" : ["bus timing","road connectivity","distance","nearest city distance"],
+                    "answer" : "No Bus available , aapko Dubauli se yatra karne k liye main Road se auto or Private vehicles ka istemal karna padega <br> Fazilnagar to kushinagar = 17 Km <br> Dubauli to Fazilnagar = 2 km, <br> duabuli to Gorakhpur = 70 km"
+                },
+                {
+                    "keywords" : ["weather","mausam","rainfall","garmi","sardi"],
+                    "answer" : "Yaha Tapman samanya rahta h aur ye safe zone area me aata h yaha sardi , garmi & Barsat Samay par aate - jate hain"
+                },
+                {
+                    "keywords" : ["culture","parampara","gaon ki pehchan","famous thing"],
+                    "answer" : "Duabuli me sab tyohar jaise EID, HOLI, BAKRA EID, DEEWALI, bade hi arram aur santi se meel julkar manaya jata h <br> is gaon me aisa kuchh khas nahi tourism k liye <br>par ek gaon ki puri culture ko asani se dekha aur samjha ja skta h yaha se "
+                },
+                {
+                    "keywords" : ["photos","gaon ki photo","masjid photo","school photo"],
+                    "answer" : "photos dekhne k liye aap sabhi is gaon ki official website (madeenamasjiddubauli@gmail.com) ke webite & googlephoto or map ke madhyam se dekh sakte hain"
+                }
+            ],
+            "default": "माफ़ कीजिये 🙏, <br>मुझे आपका प्रश्न समझ में नहीं आया, मेरे पास इसका कोई उत्तर नहीं है। <br>कृपया अपना प्रश्न दोहराएँ या किसी अन्य विषय पर पूछें।"
+        };
+                
+                chatbotButton.addEventListener('click', function() {
+                    console.log("Chatbot button clicked");
+                    chatbotWindow.classList.toggle('active');
+                });
+                
+                chatbotClose.addEventListener('click', function() {
+                    console.log("Chatbot close clicked");
+                    chatbotWindow.classList.remove('active');
+                });
+                
+                // Find answer function
+                function findAnswer(question) {
+                    const lowercaseQuestion = question.toLowerCase().trim();
+                    const words = lowercaseQuestion.split(/\s+/);
+
+                    let answers = [];
+                    let images = [];
+
+                    for (let i = 0; i < words.length; i++) {
+                        for (let j = i + 1; j <= words.length; j++) {
+                            const phrase = words.slice(i, j).join(" ");
+                            const phraseNoSpace = phrase.replace(/\s+/g, "");
+
+                            for (const item of sampleData.questions) {
+                                for (const keyword of item.keywords) {
+                                    const lowerKeyword = keyword.toLowerCase().trim();
+                                    const noSpaceKeyword = lowerKeyword.replace(/\s+/g, "");
+
+                                    if (phrase === lowerKeyword || phraseNoSpace === noSpaceKeyword) {
+                                        if (Array.isArray(item.answer)) {
+                                            answers.push(...item.answer);
+                                        } else {
+                                            answers.push(item.answer);
+                                        }
+
+                                        if (item.images) {
+                                            images.push(...item.images);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    if (answers.length > 0) {
+                        return {
+                            text: answers.map((ans, i) => `${ans}`).join("<br>"),
+                            images: images
+                        };
+                    }
+
+                    return {
+                        text: sampleData.default,
+                        images: []
+                    };
+                }
+
+                // Send message function
+                function sendChatbotMessage() {
+                    const input = chatbotInput.value.trim();
+                    
+                    if (input === '') return;
+                    
+                    chatbotMessages.innerHTML += `<div class="chatbot-message user-message"><b>You:</b> ${input}</div>`;
+                    
+                    chatbotInput.value = '';
+                    
+                    chatbotMessages.innerHTML += `
+                        <div class="typing-indicator" id="typingIndicator">
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                            <div class="typing-dot"></div>
+                        </div>
+                    `;
+                    
+                    chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                    
+                    setTimeout(() => {
+                        const typingIndicator = document.getElementById('typingIndicator');
+                        if (typingIndicator) typingIndicator.remove();
+                        
+                        const result = findAnswer(input);
+
+                        let botMessageHTML = `
+                            <div class="chatbot-message bot-message">
+                                <b>Ans:</b> ${result.text}
+                        `;
+
+                        if (result.images.length > 0) {
+                            botMessageHTML += `
+                                <div class="chatbot-image-container">
+                            `;
+                            result.images.forEach(src => {
+                                botMessageHTML += `
+                                    <img src="${src}" class="chatbot-image" alt="Chatbot Image">
+                                `;
+                            });
+                            botMessageHTML += `</div>`;
+                        }
+
+                        botMessageHTML += `</div>`;
+                        chatbotMessages.innerHTML += botMessageHTML;
+
+                        chatbotMessages.scrollTop = chatbotMessages.scrollHeight;
+                    }, 1500);
+                }
+
+                // Event listeners for chatbot
+                if (chatbotSend) {
+                    chatbotSend.addEventListener('click', sendChatbotMessage);
+                }
+                
+                if (chatbotInput) {
+                    chatbotInput.addEventListener('keypress', (e) => {
+                        if (e.key === 'Enter') {
+                            sendChatbotMessage();
+                        }
+                    });
+                }
+            } else {
+                console.log("Some chatbot elements not found");
+            }
+
+                              // ========== END CHATBOT CODE ==========
+            
+        });
+    </script>
+</body>
+</html>
