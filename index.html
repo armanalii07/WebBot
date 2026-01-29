@@ -1607,7 +1607,7 @@
                     <a href="#services" class="btn btn-primary" style="margin-top: 20px;">Our Services</a>
                 </div>
                 
-                <!-- Image Slider -->
+                <!-- Image Slider, I can Add here Multiple Images -->
                 <div class="image-slider">
                     <div class="slider-container" id="sliderContainer">
                         <div class="slider-slide">
@@ -1621,6 +1621,12 @@
                         </div>
                         <div class="slider-slide">
                             <img src="images/masjid4.jpg" alt="Madrasa Classes">
+                        </div>
+                        <div class="slider-slide">
+                            <img src="images/ai1.png" alt="Masjid Image">
+                        </div>
+                        <div class="slider-slide">
+                            <img src="images/ai2.png" alt="Masjid Exterior">
                         </div>
                     </div>
                     <div class="slider-nav" id="sliderNav">
@@ -1984,6 +1990,8 @@
         <div class="chatbot-button" id="chatbotButton">
             <i class="fas fa-comments"></i>
         </div>
+        <!-- ChatBot Text Below the Icon -->
+         <p><b>ChatBot</b></p>
         <div class="chatbot-window" id="chatbotWindow">
             <div class="chatbot-header">
                 <h3>Dubauli Village Assistant</h3>
@@ -2004,7 +2012,6 @@
             </div>
         </div>
     </div>
-
     <script>
         
         document.addEventListener('DOMContentLoaded', function() {
@@ -2275,12 +2282,12 @@
                     "answer": "Namaste🙏! Assalamualaikum🤝! <br>मैं आपकी क्या मदद कर सकता हूँ? <br>How can i help you?"
                 },
                 {
-                    "keywords": ["assalamualaikum"],
+                    "keywords": ["assalamualaikum", "salam"],
                     "answer": "Walekum Assalam🤝<br> mai Aiman Chatbot🤖 apko kya puchhna hai?"
                 },
                 {
                     "keywords": ["tumhara naam", "name", "kaun", "who are you", "kon"],
-                    "answer": "मेरा नाम Aiman ChatBot है. <br>मुझे अरमान भाई ने बनाया है. मैं यहाँ आपकी मदद के लिए हूँ आप क्या पूछना चाहते है मुझसे Dubauli के बारे में?<br><b>Arman Ali</b>",
+                    "answer": "मेरा नाम Aiman ChatBot है. <br>मुझे अरमान भाई ने बनाया है. मैं यहाँ आपकी मदद के लिए हूँ <br>आप क्या पूछना चाहते है? मुझसे Dubauli के बारे में?<br><b>Arman Ali</b>",
                     "images" : ["images/armanali.jpg"]
                 },
                 {
@@ -2298,11 +2305,11 @@
                 },
                 {
                     "keywords": ["bijli", "electricity", "power", "light"],
-                    "answer": "UPPCL Office, Fazilnagar."
+                    "answer": "Near UPPCL Office, Fazilnagar & main Hydel In Kushinagar."
                 },
                 {
-                    "keywords": ["health", "swasthya", "doctor", "hospital", "aspatal", "medical", "patient", "mareej", "medicine", "dawai", "dawai ka dukan"],
-                    "answer": "Swasthya samasya ke liye , koi hospital nahi hai <br>lekin 2 medical stores <br>1 Shiv Shankar medical store Vikas nagar chauraha Dubauli mo.8052242981,<br> 2. Veera medical store near Vikas nagar chauraha mo.9565262933) <br>आप इनके यहाँ अपने छोटे छोटे बिमारियों का इलाज भी करा सकते हैं Emergency helpline: 108"
+                    "keywords": ["health", "swasthya", "doctor", "hospital", "aspatal", "medical", "patient", "mareej", "medicine", "dawai", "dawai ka dukan", "dawa", "rog"],
+                    "answer": "Swasthya samasya ke liye , koi hospital nahi hai <br>lekin 2 medical stores <br><b>1 Shiv Shankar medical store Vikas nagar chauraha Dubauli mo.8052242981,<br> 2. Veera medical store near Vikas nagar chauraha mo.9565262933)<b> <br>आप इनके यहाँ अपने छोटे छोटे बिमारियों का इलाज भी करा सकते हैं Emergency helpline: 108"
                 },
                 {
                     "keywords": ["information", "details about village", "about dubauli", "address", "post", "district", "block", "tahseel", "state", "village", "police", "station", "gaon ka naam", "naam","jeela"],
@@ -2310,7 +2317,8 @@
                 },
                 {
                     "keywords": ["panchayat", "panchayat bhawan"],
-                    "answer": "Panchayat Bhawan Dubauli near Gov Primary School Dubauli Basdeela (gaon ke paschim disha me)."
+                    "answer": "Panchayat Bhawan Dubauli near Gov Primary School Dubauli Basdeela (gaon ke paschim disha me).",
+                    "images" : ["images/Botimages/panchayatbhawan1.jpg", "images/Botimages/panchayatbhawan2.jpg"]
                 },
                 {
                     "keywords": ["members", "sadar", "chairman", "khajanchi", "cashier", "secratory"],
@@ -2318,7 +2326,8 @@
                 },
                 {
                     "keywords": ["maulana", "imam", "hafiji", "hafiz"],
-                    "answer": "Saifuddin Sahab (mo. 7379820186) since 2017, home-town Dhanauji."
+                    "answer": "Saifuddin Sahab (mo. 7379820186) since 2017, home-town Dhanauji.",
+                    "images" : ["images/Botimages/SaifuddinMaulana.jpg"]
                 },
                 {
                     "keywords": ["vote", "voting", "voters"],
@@ -2326,15 +2335,18 @@
                 },
                 {
                     "keywords": ["pradhan", "mukhiya", "sarpanch"],
-                    "answer": "Ajay Tiwari (Devichak), mo.9918729099 since 2021-2026."
+                    "answer": "Ajay Tiwari (Devichak), mo.9918729099 since 2021-2026.",
+                    "images" : ["images/Botimages/AjayTiwari.jpg"]
                 },
                 {
                     "keywords": ["bdc", "sadasya"],
-                    "answer": "BDC = ............., mo. _________, (--); <br>Sadasya = ..........., mo. __________,(--)."
+                    "answer": "BDC = ............., mo. _________, (--); <br>Sadasya = ..........., mo. __________,(--).",
+                    "images" : ["images/Botimages/RamjaAli.jpg"]
                 },
                 {
                     "keywords": ["public", "log", "ladke", "ladkiya", "mahilaye", "male", "female", "peple", "children", "child"],
-                    "answer": "total Public = 2000+, <br>male = --, <br>female = --, <br>children = ---;."
+                    "answer": "total Public = 2000+, <br>male = --, <br>female = --, <br>children = ---;.",
+                    "images" : ["images/Botimages/census2011.jpg"]
                 },
                 {
                     "keywords": ["shop", "grocery", "dukan", "dukaan","kirana store", "store", "kirana"],
@@ -2346,11 +2358,13 @@
                 },
                 {
                     "keywords": ["home", "house", "building", "makan", "makaan", "ghar", "aawash"],
-                    "answer": "Total ghar = 150+; <br>Total Muslim Ghar = 80+; <br>Total Hindu ghar = 70+;"
+                    "answer": "Total ghar = 150+; <br>Total Muslim Ghar = 80+; <br>Total Hindu ghar = 70+;",
+                    "images" : ["images/Botimages/census2011house.jpg"]
                 },
                 {
                     "keywords": ["caste", "jangadna", "illiterates", "literate"],
-                    "answer": "2011 KE JANGADANA KE ANUSHAR <br>Sex Ratio (2011): 1014 <br>Population (2011) = 713<br> Male = 354 <br>Female = 359<br>Child Population (0-6 yrs)=127 (66M,61F)<br>Scheduled Castes (SC)= 8 (4M,4F)<br>Scheduled Tribes (ST)=4 (2M,2F)<br>Literate Population=484 (272M,212F)<br>Illiterate Population=229 (82M, 147F) <br>Households : 108 <br>According to the 2011 Census, the literacy rate in Tekulia Urf Dubauli is 67.88%. The male literacy rate is 76.84%, while the female literacy rate is 59.05%."
+                    "answer": "2011 KE JANGADANA KE ANUSHAR <br>Sex Ratio (2011): 1014 <br>Population (2011) = 713<br> Male = 354 <br>Female = 359<br>Child Population (0-6 yrs)=127 (66M,61F)<br>Scheduled Castes (SC)= 8 (4M,4F)<br>Scheduled Tribes (ST)=4 (2M,2F)<br>Literate Population=484 (272M,212F)<br>Illiterate Population=229 (82M, 147F) <br>Households : 108 <br>According to the 2011 Census, the literacy rate in Tekulia Urf Dubauli is 67.88%. The male literacy rate is 76.84%, while the female literacy rate is 59.05%.",
+                    "images" : ["images/Botimages/census2011house.jpg"]
                 },
                 {
                     "keywords": ["eidgah", "kabar", "kabristan", "samshan"],
@@ -2363,10 +2377,10 @@
                 },
                 {
                     "keywords": ["namaste", "hello", "salam", "ram ram", "assalamualaikum"],
-                    "answer": "Namaste! Aapka swagat hai Dubauli gaon chatbot me."
+                    "answer": "Namaste! Aapka swagat hai Dubauli gaon chatbot me.<br>How May I Help You?"
                 },
                 {
-                    "keywords": ["kaise ho", "aap kaise ho", "hoe are you"],
+                    "keywords": ["kaise ho", "aap kaise ho", "how are you", "khairiyat"],
                     "answer": "Main theek hoon, aap kaise ho?"
                 },
                 {
@@ -2379,7 +2393,8 @@
                 },
                 {
                     "keywords": ["population", "aabadi"],
-                    "answer": "Abadi: 2011 KE JANGADANA KE ANUSHAR Population/aabadi = 713 <br>Sex Ratio (2011): 1014"
+                    "answer": "Abadi: 2011 KE JANGADANA KE ANUSHAR Population/aabadi = 713 <br>Sex Ratio (2011): 1014",
+                    "images" : ["images/Botimages/census2011house.jpg"]
                 },
                 {
                     "keywords": ["total area", "kshetra"],
@@ -2399,7 +2414,8 @@
                 },
                 {
                     "keywords": ["caste", "samudaay"],
-                    "answer": "Yahan alag-alag samudaay ke log rehte hain. Muslim (Mansoori,Ansari), Hindu (Bhumihar,Gond,Patel,Yadav) etc.."
+                    "answer": "Yahan alag-alag samudaay ke log rehte hain. Muslim (Mansoori,Ansari), Hindu (Bhumihar,Gond,Patel,Yadav) etc..",
+                    "images" : ["images/Botimages/census2011house.jpg"]
                 },
                 {
                     "keywords": ["voter list"],
@@ -2414,12 +2430,8 @@
                     "answer": "Gaon me ek masjid hai, jiska naam मदीना मस्जिद दुबौली hain."
                 },
                 {
-                    "keywords": ["madrsa","madarasa"],
+                    "keywords": ["madarsa","madarasa"],
                     "answer": "एक मस्जिद है उसी मे बच्चे पढ़ते भी हैँ ."
-                },
-                {
-                    "keywords": ["maulana", "imam", "hafiz"],
-                    "answer": "Gaon ke imam sahab ka naam: .. .........."
                 },
                 {
                     "keywords": ["tyohaar", "festival", "eid", "holi", "diwali"],
@@ -2431,11 +2443,11 @@
                 },
                 {
                     "keywords": ["college"],
-                    "answer": "College sabse nazdeek hai: Gegree College Fazilnagar Garahiya Kushinar UP"
+                    "answer": "Sabse nazdeek College:<br>1. P.K Mahavidhyalay Patkhauli Fazilnagar Kushinagar UP <br>2.Degree College Fazilnagar Garahiya Kushinar UP"
                 },
                 {
                     "keywords": ["teacher"],
-                    "answer": "School ke shikshak: ............"
+                    "answer": "Sarkari School ke shikshak:<br>1. Govind Rai."
                 },
                 {
                     "keywords": ["headmaster"],
@@ -2443,15 +2455,11 @@
                 },
                 {
                     "keywords": ["admission", "result", "scholarship"],
-                    "answer": "Admission aur result ki jankari school/college se milegi. Scholarship ke liye UP Scholarship portal par apply karein."
+                    "answer": "Admission aur result ki jankari school/college se milegi.<br>Scholarship ke liye UP Scholarship portal par apply karein."
                 },
                 {
                     "keywords": ["health", "swasthya", "doctor", "hospital", "aspatal"],
                     "answer": "Swasthya samasya ke liye aap gaon ke Quack (jhola chhap doctor) se ilaaz karwa skte. Emergency helpline: 108"
-                },
-                {
-                    "keywords": ["medicine", "dawa", "medical"],
-                    "answer": "Gaon me dawa ki dukaan: upar jo list hai wahi h"
                 },
                 {
                     "keywords": ["ambulance"],
@@ -2459,23 +2467,23 @@
                 },
                 {
                     "keywords": ["vaccination", "tika"],
-                    "answer": "Gaon me anganwadi aur PHC me tika lagta hai(Primary Government School."
+                    "answer": "Gaon me anganwadi aur PHC me tika lagta hai(Primary Government School)."
                 },
                 {
                     "keywords": ["kheti", "fasal"],
                     "answer": "Gaon me dhan, gehun,ganna ,matar,masoor,moong,vegetables,makka etc. ki kheti hoti hai."
                 },
                 {
-                    "keywords": ["tractor"],
-                    "answer": "Kuch kisano ke paas tractor hai Jaise me  रमजान अली  , किरोसी राय , ब्रजेश राय... ."
+                    "keywords": ["tractor", "hal", "cultivator"],
+                    "answer": "Kuch kisano ke paas tractor aur anya saman uplabdh hain Jaise me,<br>रमजान अली, किरोसी राय, ब्रजेश राय, संजय राय आदि  ... ."
                 },
                 {
-                    "keywords": ["beej", "khaad", "fertilizer"],
+                    "keywords": ["beej", "khaad", "fertilizer", "khad", "kitnasak", "urea"],
                     "answer": "Beej aur khaad ki dukaan: KGN खाद भंडार विकास नगर चौराहा दुबौली <br>प्रो.अज़हरुद्दीन आली (भुटन भईया ) 9919346130<br>Everyday 27*7",
                     "images" : ["images/Botimages/Azaharuddin Ali1.jpg"]
                 },
                 {
-                    "keywords": ["pashu", "gaay", "bhains", "bakri", "animals"],
+                    "keywords": ["pashu", "gaay", "bhains", "bakri", "animals", "murgi"],
                     "answer": "Gaon me log gaay, bhains , Murgi aur bakri palte hain."
                 },
                 {
@@ -2487,20 +2495,20 @@
                     "answer": "Gaon me zyadatar pakke aur kuchh kacche ghar hain."
                 },
                 {
-                    "keywords": ["awas", "aawas yojna"],
+                    "keywords": ["aawas yojna","awas"],
                     "answer": "PM Awas Yojna ke under logon ko ghar diye ja rahe hain."
                 },
                 {
-                    "keywords": ["bijli", "electricity", "meter"],
+                    "keywords": ["bijli bill", "bijli", "electricity", "meter"],
                     "answer": "Bijli ki suvidha gaon me uplabdh hai. Complaint ke liye UPPCL se sampark karein 1912."
                 },
                 {
-                    "keywords": ["pani", "nal", "water"],
+                    "keywords": ["pani", "nal", "water", "handpump"],
                     "answer": "Gaon me pani ke liye handpump aur nal dono hai."
                 },
                 {
                     "keywords": ["sadak", "road", "pul", "bridge"],
-                    "answer": "Gaon ki sadak aur naale ki sthiti baki gaon se bekaar h"
+                    "answer": "Gaon ki sadak aur naale ki sthiti baki gaon se bekaar h>br>POOL aur Briedge thode sahi hain"
                 },
                 {
                     "keywords": ["anganwadi"],
@@ -2508,11 +2516,12 @@
                 },
                 {
                     "keywords": ["gram panchayat"],
-                    "answer": "Gram Panchayat office gaon primary school ke pass me hai gaon ke paschim disha me ."
+                    "answer": "Gram Panchayat office gaon primary school ke pass me hai gaon ke paschim disha me .",
+                    "images" : ["Images/Botimages/panchayatbawan.jpg"]
                 },
                 {
-                    "keywords": ["ration card"],
-                    "answer": "Ration card ke liye panchayat office ya CSC center me jayein."
+                    "keywords": ["ration card", "sarkari rashan"],
+                    "answer": "Ration card ke liye panchayat office ya CSC center me jayein.<br>Sarkari Rashan har mahine milta h"
                 },
                 {
                     "keywords": ["aadhaar card"],
@@ -2568,11 +2577,11 @@
                 },
                 {
                     "keywords": ["cricket", "kabbadi", "kushti"],
-                    "answer": "Gaon ke yuva in khelon me bhaag lete hain."
+                    "answer": "Gaon ke yuva in khelon me bhaag lete hain.<br> gaon me khelne k liye koi reserve jagah nahi hain"
                 },
                 {
                     "keywords": ["mela", "jhoola"],
-                    "answer": "Har saal yahan mela lagta hai. Eid , Bakra Eid"
+                    "answer": "Har saal yahan mela lagta hai. Eid , Bakra Eid ke tyoharon par"
                 },
                 {
                     "keywords": ["song", "dance", "dhol", "baja"],
@@ -2763,10 +2772,7 @@
                 }
             } else {
                 console.log("Some chatbot elements not found");
-            }
-
-                              // ========== END CHATBOT CODE ==========
-            
+            }            
         });
     </script>
 </body>
